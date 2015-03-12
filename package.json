@@ -1,13 +1,13 @@
 {
   "name": "generator-nukejs",
-  "version": "0.0.0",
-  "description": "Yeoman generator",
+  "version": "0.0.1",
+  "description": "Nuke.js yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "FREEZX/generator-nukejs",
   "author": {
     "name": "Kristijan Trajkovski",
-    "email": "",
+    "email": "kiko_trajkovski@hotmail.com",
     "url": "https://github.com/FREEZX"
   },
   "engines": {
@@ -17,13 +17,15 @@
     "test": "mocha"
   },
   "files": [
-    "app"
+    "app",
+    "module"
   ],
   "keywords": [
     "yeoman-generator"
   ],
   "dependencies": {
     "chalk": "^1.0.0",
+    "inflection": "^1.6.0",
     "yeoman-generator": "^0.18.9",
     "yosay": "^1.0.2"
   },

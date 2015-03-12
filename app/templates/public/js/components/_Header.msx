@@ -10,7 +10,9 @@ var Header = {
     var articleLink;
     if(AppStore.loggedin()) {
       loginSpot = <NavLink state={{to: '/logout'}}>Logout</NavLink>;
+      <% if (addArticlesModule) { %>
       articleLink = <NavLink state={{to: '/articles'}}>Articles</NavLink>;
+      <% } %>
     } else {
       loginSpot = <NavLink state={{to: '/login'}}>Login</NavLink>;
     }
@@ -31,7 +33,9 @@ var Header = {
               <NavLink state={{to: '/'}}>Home</NavLink>
               <NavLink state={{to: '/benchmarks'}}>Benchmarks</NavLink>
               <NavLink state={{href: 'https://github.com/FREEZX/nuke.js'}}>Docs</NavLink>
+              <% if (addArticlesModule) { %>
               {articleLink}
+              <% } %>
             </ul>
             <ul className="nav navbar-nav navbar-right">
               {loginSpot}
