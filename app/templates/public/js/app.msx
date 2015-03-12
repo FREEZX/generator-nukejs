@@ -1,0 +1,44 @@
+'use strict';
+
+if (global.document) {
+  require('es6-promise').polyfill();
+}
+
+var domready = require('domready');
+var m = require('mithril.elements');
+
+require('./elements/Link');
+require('./elements/NavLink');
+
+var primusUrl = window.location.protocol+'//'+window.location.host+'/';
+
+var token = localStorage.getItem('nuketoken');
+if(token) {
+  primusUrl = primusUrl+'?accessToken='+token;
+}
+
+var primus = new Primus(primusUrl);
+window.primus = primus;
+
+var Header = require('./components/Header');
+
+var Home = require('./components/Home');
+var Benchmarks = require('./components/Benchmarks');
+var Articles = require('./components/Articles');
+var Login = require('./components/Login');
+var Logout = require('./components/Logout');
+var Signup = require('./components/Signup');
+
+m.route.mode = 'hash';
+
+domready(function() {
+  m.route(document.getElementById('app') , '/', 
+    {
+      '/': Home,
+      '/benchmarks': Benchmarks,
+      '/articles': Articles,
+      '/login': Login,
+      '/logout': Logout,
+      '/signup': Signup
+    });
+});
