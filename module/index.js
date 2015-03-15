@@ -37,5 +37,15 @@ module.exports = yeoman.generators.NamedBase.extend({
       this.destinationPath('app/routes/' + this.slugifiedSingularName + '.routes.js'),
       this
     );
+    this.fs.copyTpl(
+      this.templatePath('_model.test.js'),
+      this.destinationPath('app/tests/models/' + this.slugifiedSingularName + '.model.test.js'),
+      this
+    );
+    this.fs.copyTpl(
+      this.templatePath('_routes.test.js'),
+      this.destinationPath('app/tests/routes/' + this.slugifiedSingularName + '.routes.test.js'),
+      this
+    );
   }
 });

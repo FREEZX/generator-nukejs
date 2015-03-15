@@ -87,7 +87,8 @@ exports.list = function(spark, message) {
 /**
  * <%= humanizedSingularName %> middleware
  */
-exports.<%= slugifiedSingularName %>ByID = function(spark, message, id, cb) {
+exports.<%= slugifiedSingularName %>ByID = function(spark, message, id) {
+  var cb = arguments[arguments.length-1];
   if (!mongoose.Types.ObjectId.isValid(id)) {
     var err = {
       message: '<%= humanizedSingularName %> is invalid'

@@ -92,6 +92,7 @@ module.exports = yeoman.generators.Base.extend({
       //Env files
       this.template('config/env/_all.js', 'config/env/all.js');
       this.template('config/env/_development.js', 'config/env/development.js');
+      this.template('config/env/_test.js', 'config/env/test.js');
       this.copy('config/env/production.js');
     },
 
@@ -118,7 +119,9 @@ module.exports = yeoman.generators.Base.extend({
         this.copy('app/controllers/articles.controller.js');
         this.copy('app/models/article.model.js');
         this.copy('app/routes/article.routes.js');
+        this.directory('app/tests');
       }
+      this.copy('app/tests/routes/clientconnection.js');
     },
 
     frontendfiles: function() {

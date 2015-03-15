@@ -87,7 +87,8 @@ exports.list = function(spark, message) {
 /**
  * Article middleware
  */
-exports.articleByID = function(spark, message, id, cb) {
+exports.articleByID = function(spark, message, id) {
+  var cb = arguments[arguments.length-1];
   if (!mongoose.Types.ObjectId.isValid(id)) {
     var err = {
       message: 'Article is invalid'
