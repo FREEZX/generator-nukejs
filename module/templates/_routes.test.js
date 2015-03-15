@@ -101,6 +101,30 @@ var go = function(client) {
         });
       });
     });
+
+
+
+    it('should be able to list <%= humanizedPluralName %>', function(done){
+      var <%= slugifiedSingularName %>Obj1 = new <%= classifiedSingularName %>(<%= slugifiedSingularName %>);
+      <%= slugifiedSingularName %>Obj1.save(function(err, <%= slugifiedSingularName %>1){
+        var <%= slugifiedSingularName %>Obj2 = new <%= classifiedSingularName %>(<%= slugifiedSingularName %>);
+        <%= slugifiedSingularName %>Obj2.save(function(err, <%= slugifiedSingularName %>2){
+          client.request('/<%= slugifiedSingularName %>/list')
+          .then(function(data){
+            data[0]._id.should.match(<%= slugifiedSingularName %>2.id);
+            data[0].title.should.match(<%= slugifiedSingularName %>2.title);
+            data[0].content.should.match(<%= slugifiedSingularName %>2.content);
+            data[1]._id.should.match(<%= slugifiedSingularName %>1.id);
+            data[1].title.should.match(<%= slugifiedSingularName %>1.title);
+            data[1].content.should.match(<%= slugifiedSingularName %>1.content);
+            done();
+          })
+          .fail(function(data){
+            done(new Error(data));
+          });
+        });
+      });
+    });
   });
 };
 
