@@ -24,7 +24,9 @@ var Header = require('./components/Header');
 
 var Home = require('./components/Home');
 var Benchmarks = require('./components/Benchmarks');
+<% if (addArticlesModule) { %>
 var Articles = require('./components/Articles');
+<% } %>
 var Login = require('./components/Login');
 var Logout = require('./components/Logout');
 var Signup = require('./components/Signup');
@@ -32,11 +34,13 @@ var Signup = require('./components/Signup');
 m.route.mode = 'hash';
 
 domready(function() {
-  m.route(document.getElementById('app') , '/', 
+  m.route(document.getElementById('app') , '/',
     {
       '/': Home,
       '/benchmarks': Benchmarks,
+      <% if (addArticlesModule) { %>
       '/articles': Articles,
+      <% } %>
       '/login': Login,
       '/logout': Logout,
       '/signup': Signup

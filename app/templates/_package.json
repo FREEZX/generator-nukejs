@@ -1,5 +1,5 @@
 {
-  "name": "nukejs",
+  "name": "<%= appNameSlug %>",
   "version": "0.0.1",
   "description": "High-speed realtime framework",
   "main": "public/js/app.msx",
@@ -16,7 +16,7 @@
     "mongoose": "^3.8.23",
     "mongoose-cachebox": "^1.2.0",
     "passport": "^0.2.1",
-    "passport-jwt-strategy": "1.1.2",
+    "passport-jwt-strategy": "^1.1.3",
     "passport-local": "^1.0.0",
     "passport-strategy": "^1.0.0",
     "pause": "0.0.1",

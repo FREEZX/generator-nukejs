@@ -42,10 +42,7 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: {
     app: function () {
-      this.fs.copy(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json')
-      );
+      this.template('_package.json', 'package.json');
       this.fs.copy(
         this.templatePath('_bower.json'),
         this.destinationPath('bower.json')
@@ -53,6 +50,10 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     projectfiles: function () {
+      this.fs.copy(
+        this.templatePath('gitignore'),
+        this.destinationPath('.gitignore')
+      );
       this.fs.copy(
         this.templatePath('editorconfig'),
         this.destinationPath('.editorconfig')
@@ -145,7 +146,7 @@ module.exports = yeoman.generators.Base.extend({
         this.copy('public/js/components/Articles.msx');
       }
 
-      this.copy('public/js/app.msx');
+      this.template('public/js/_app.msx', 'public/js/app.msx');
     }
   },
 
