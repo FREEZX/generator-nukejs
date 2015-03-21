@@ -47,6 +47,7 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('_bower.json'),
         this.destinationPath('bower.json')
       );
+      this.copy('nodemon.json');
     },
 
     projectfiles: function () {
