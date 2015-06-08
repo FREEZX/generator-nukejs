@@ -1,6 +1,6 @@
 {
   "name": "generator-nukejs",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Nuke.js yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
