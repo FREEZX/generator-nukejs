@@ -71,7 +71,7 @@ module.exports = yeoman.generators.Base.extend({
       this.copy('LICENSE.md');
       this.fs.copy(
         this.templatePath('public/js/jshintrc'),
-        this.templatePath('public/js/.jshintrc')
+        this.destinationPath('public/js/.jshintrc')
       );
     },
 
@@ -135,19 +135,19 @@ module.exports = yeoman.generators.Base.extend({
       this.directory('public/js/elements');
       this.copy('public/js/stores/AppStore.js');
 
-      this.copy('public/js/components/Benchmarks.msx');
-      this.template('public/js/components/_Header.msx', 'public/js/components/Header.msx');
-      this.copy('public/js/components/Home.msx');
-      this.copy('public/js/components/Login.msx');
-      this.copy('public/js/components/Logout.msx');
-      this.copy('public/js/components/Signup.msx');
+      this.copy('public/js/components/Benchmarks.js');
+      this.template('public/js/components/_Header.js', 'public/js/components/Header.js');
+      this.copy('public/js/components/Home.js');
+      this.copy('public/js/components/Login.js');
+      this.copy('public/js/components/Logout.js');
+      this.copy('public/js/components/Signup.js');
 
       if(this.addArticlesModule) {
         this.copy('public/js/stores/ArticleStore.js');
-        this.copy('public/js/components/Articles.msx');
+        this.copy('public/js/components/Articles.js');
       }
 
-      this.template('public/js/_app.msx', 'public/js/app.msx');
+      this.template('public/js/_app.js', 'public/js/app.js');
     }
   },
 
